@@ -11,6 +11,9 @@
 		B41CA7412AD5BD8E005284A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41CA7402AD5BD8E005284A4 /* ContentView.swift */; };
 		B41CA7432AD5BD91005284A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41CA7422AD5BD91005284A4 /* Assets.xcassets */; };
 		B41CA7462AD5BD91005284A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41CA7452AD5BD91005284A4 /* Preview Assets.xcassets */; };
+		B484AF8A2ADE05FC00AF2D1D /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484AF892ADE05FC00AF2D1D /* RegisterPage.swift */; };
+		B484AF8C2ADE0EB200AF2D1D /* ForgetPasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484AF8B2ADE0EB200AF2D1D /* ForgetPasswordPage.swift */; };
+		B484AF8E2ADE152200AF2D1D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484AF8D2ADE152200AF2D1D /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		B41CA7402AD5BD8E005284A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B41CA7422AD5BD91005284A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B41CA7452AD5BD91005284A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B484AF892ADE05FC00AF2D1D /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
+		B484AF8B2ADE0EB200AF2D1D /* ForgetPasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordPage.swift; sourceTree = "<group>"; };
+		B484AF8D2ADE152200AF2D1D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,9 @@
 				B41CA7402AD5BD8E005284A4 /* ContentView.swift */,
 				B41CA7422AD5BD91005284A4 /* Assets.xcassets */,
 				B41CA7442AD5BD91005284A4 /* Preview Content */,
+				B484AF892ADE05FC00AF2D1D /* RegisterPage.swift */,
+				B484AF8B2ADE0EB200AF2D1D /* ForgetPasswordPage.swift */,
+				B484AF8D2ADE152200AF2D1D /* MenuView.swift */,
 			);
 			path = "ProjetoBeloMonte-Swift";
 			sourceTree = "<group>";
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B484AF8E2ADE152200AF2D1D /* MenuView.swift in Sources */,
 				B41CA7412AD5BD8E005284A4 /* ContentView.swift in Sources */,
 				B41CA73F2AD5BD8E005284A4 /* ProjetoBeloMonte_SwiftApp.swift in Sources */,
+				B484AF8C2ADE0EB200AF2D1D /* ForgetPasswordPage.swift in Sources */,
+				B484AF8A2ADE05FC00AF2D1D /* RegisterPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
