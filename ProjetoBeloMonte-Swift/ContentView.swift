@@ -20,6 +20,8 @@ struct ContentView: View {
         }
     }
     
+    
+    
     var body: some View {
         NavigationView{
             
@@ -50,11 +52,9 @@ struct ContentView: View {
                     
                     
                     Spacer().frame(height: 20)
+                
                     
-                    
-                    Button(action: {
-                        checkLogin()
-                    }) {
+                    NavigationLink(destination: MenuView()) {
                         Text("Entrar")
                             .font(.title2)
                             .bold()
