@@ -11,10 +11,17 @@
 		B41CA7412AD5BD8E005284A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41CA7402AD5BD8E005284A4 /* ContentView.swift */; };
 		B41CA7432AD5BD91005284A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41CA7422AD5BD91005284A4 /* Assets.xcassets */; };
 		B41CA7462AD5BD91005284A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41CA7452AD5BD91005284A4 /* Preview Assets.xcassets */; };
-		B45BC5BF2AE5AC9C00AD05BF /* Reuniao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BC5BE2AE5AC9C00AD05BF /* Reuniao.swift */; };
 		B484AF8A2ADE05FC00AF2D1D /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484AF892ADE05FC00AF2D1D /* RegisterPage.swift */; };
 		B484AF8C2ADE0EB200AF2D1D /* ForgetPasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484AF8B2ADE0EB200AF2D1D /* ForgetPasswordPage.swift */; };
 		B484AF8E2ADE152200AF2D1D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484AF8D2ADE152200AF2D1D /* MenuView.swift */; };
+		B4AB88C22AFAA7CA00A001AE /* Reuniao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88C12AFAA7CA00A001AE /* Reuniao.swift */; };
+		B4AB88C52AFAB15300A001AE /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88C42AFAB15300A001AE /* NavBar.swift */; };
+		B4AB88C72AFAB29A00A001AE /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88C62AFAB29A00A001AE /* Screen.swift */; };
+		B4AB88C92AFAC8E700A001AE /* AdicionarReuniao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88C82AFAC8E700A001AE /* AdicionarReuniao.swift */; };
+		B4AB88CB2AFACA0800A001AE /* Configuracoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88CA2AFACA0800A001AE /* Configuracoes.swift */; };
+		B4AB88CD2AFACFFF00A001AE /* Hoje.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88CC2AFACFFF00A001AE /* Hoje.swift */; };
+		B4AB88CF2AFAD05000A001AE /* Destaque.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88CE2AFAD05000A001AE /* Destaque.swift */; };
+		B4AB88D12AFAD08D00A001AE /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88D02AFAD08D00A001AE /* Usuario.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,10 +30,17 @@
 		B41CA7402AD5BD8E005284A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B41CA7422AD5BD91005284A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B41CA7452AD5BD91005284A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B45BC5BE2AE5AC9C00AD05BF /* Reuniao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reuniao.swift; sourceTree = "<group>"; };
 		B484AF892ADE05FC00AF2D1D /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
 		B484AF8B2ADE0EB200AF2D1D /* ForgetPasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordPage.swift; sourceTree = "<group>"; };
 		B484AF8D2ADE152200AF2D1D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B4AB88C12AFAA7CA00A001AE /* Reuniao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reuniao.swift; sourceTree = "<group>"; };
+		B4AB88C42AFAB15300A001AE /* NavBar.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; tabWidth = 5; wrapsLines = 0; };
+		B4AB88C62AFAB29A00A001AE /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		B4AB88C82AFAC8E700A001AE /* AdicionarReuniao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarReuniao.swift; sourceTree = "<group>"; };
+		B4AB88CA2AFACA0800A001AE /* Configuracoes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuracoes.swift; sourceTree = "<group>"; };
+		B4AB88CC2AFACFFF00A001AE /* Hoje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hoje.swift; sourceTree = "<group>"; };
+		B4AB88CE2AFAD05000A001AE /* Destaque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destaque.swift; sourceTree = "<group>"; };
+		B4AB88D02AFAD08D00A001AE /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,14 +73,13 @@
 		B41CA73D2AD5BD8E005284A4 /* ProjetoBeloMonte-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				B4AB88C32AFAB13500A001AE /* Components */,
+				B4AB88C02AFAA75F00A001AE /* Controller */,
+				B4AB88BF2AFAA75700A001AE /* View */,
+				B4AB88BE2AFAA75000A001AE /* Model */,
 				B41CA73E2AD5BD8E005284A4 /* ProjetoBeloMonte_SwiftApp.swift */,
-				B41CA7402AD5BD8E005284A4 /* ContentView.swift */,
 				B41CA7422AD5BD91005284A4 /* Assets.xcassets */,
 				B41CA7442AD5BD91005284A4 /* Preview Content */,
-				B484AF892ADE05FC00AF2D1D /* RegisterPage.swift */,
-				B484AF8B2ADE0EB200AF2D1D /* ForgetPasswordPage.swift */,
-				B484AF8D2ADE152200AF2D1D /* MenuView.swift */,
-				B45BC5BE2AE5AC9C00AD05BF /* Reuniao.swift */,
 			);
 			path = "ProjetoBeloMonte-Swift";
 			sourceTree = "<group>";
@@ -77,6 +90,46 @@
 				B41CA7452AD5BD91005284A4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B4AB88BE2AFAA75000A001AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4AB88C12AFAA7CA00A001AE /* Reuniao.swift */,
+				B4AB88C62AFAB29A00A001AE /* Screen.swift */,
+				B4AB88CE2AFAD05000A001AE /* Destaque.swift */,
+				B4AB88D02AFAD08D00A001AE /* Usuario.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4AB88BF2AFAA75700A001AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B484AF892ADE05FC00AF2D1D /* RegisterPage.swift */,
+				B484AF8B2ADE0EB200AF2D1D /* ForgetPasswordPage.swift */,
+				B484AF8D2ADE152200AF2D1D /* MenuView.swift */,
+				B41CA7402AD5BD8E005284A4 /* ContentView.swift */,
+				B4AB88C82AFAC8E700A001AE /* AdicionarReuniao.swift */,
+				B4AB88CA2AFACA0800A001AE /* Configuracoes.swift */,
+				B4AB88CC2AFACFFF00A001AE /* Hoje.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4AB88C02AFAA75F00A001AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B4AB88C32AFAB13500A001AE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B4AB88C42AFAB15300A001AE /* NavBar.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,12 +202,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4AB88D12AFAD08D00A001AE /* Usuario.swift in Sources */,
 				B484AF8E2ADE152200AF2D1D /* MenuView.swift in Sources */,
 				B41CA7412AD5BD8E005284A4 /* ContentView.swift in Sources */,
+				B4AB88CD2AFACFFF00A001AE /* Hoje.swift in Sources */,
 				B41CA73F2AD5BD8E005284A4 /* ProjetoBeloMonte_SwiftApp.swift in Sources */,
 				B484AF8C2ADE0EB200AF2D1D /* ForgetPasswordPage.swift in Sources */,
+				B4AB88CF2AFAD05000A001AE /* Destaque.swift in Sources */,
+				B4AB88C52AFAB15300A001AE /* NavBar.swift in Sources */,
+				B4AB88C92AFAC8E700A001AE /* AdicionarReuniao.swift in Sources */,
+				B4AB88CB2AFACA0800A001AE /* Configuracoes.swift in Sources */,
 				B484AF8A2ADE05FC00AF2D1D /* RegisterPage.swift in Sources */,
-				B45BC5BF2AE5AC9C00AD05BF /* Reuniao.swift in Sources */,
+				B4AB88C22AFAA7CA00A001AE /* Reuniao.swift in Sources */,
+				B4AB88C72AFAB29A00A001AE /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

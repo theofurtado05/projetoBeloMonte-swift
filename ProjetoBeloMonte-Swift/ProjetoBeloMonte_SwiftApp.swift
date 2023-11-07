@@ -11,7 +11,7 @@ import SwiftUI
 struct ProjetoBeloMonte_SwiftApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+                ContentView()
         }
     }
 }
