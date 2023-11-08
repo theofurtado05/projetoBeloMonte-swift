@@ -22,6 +22,7 @@
 		B4AB88CD2AFACFFF00A001AE /* Hoje.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88CC2AFACFFF00A001AE /* Hoje.swift */; };
 		B4AB88CF2AFAD05000A001AE /* Destaque.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88CE2AFAD05000A001AE /* Destaque.swift */; };
 		B4AB88D12AFAD08D00A001AE /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88D02AFAD08D00A001AE /* Usuario.swift */; };
+		B4AB88D32AFADE1700A001AE /* Sistema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88D22AFADE1700A001AE /* Sistema.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		B4AB88CC2AFACFFF00A001AE /* Hoje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hoje.swift; sourceTree = "<group>"; };
 		B4AB88CE2AFAD05000A001AE /* Destaque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destaque.swift; sourceTree = "<group>"; };
 		B4AB88D02AFAD08D00A001AE /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		B4AB88D22AFADE1700A001AE /* Sistema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sistema.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				B4AB88C62AFAB29A00A001AE /* Screen.swift */,
 				B4AB88CE2AFAD05000A001AE /* Destaque.swift */,
 				B4AB88D02AFAD08D00A001AE /* Usuario.swift */,
+				B4AB88D22AFADE1700A001AE /* Sistema.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			files = (
 				B4AB88D12AFAD08D00A001AE /* Usuario.swift in Sources */,
 				B484AF8E2ADE152200AF2D1D /* MenuView.swift in Sources */,
+				B4AB88D32AFADE1700A001AE /* Sistema.swift in Sources */,
 				B41CA7412AD5BD8E005284A4 /* ContentView.swift in Sources */,
 				B4AB88CD2AFACFFF00A001AE /* Hoje.swift in Sources */,
 				B41CA73F2AD5BD8E005284A4 /* ProjetoBeloMonte_SwiftApp.swift in Sources */,

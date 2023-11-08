@@ -36,6 +36,15 @@ class Usuario {
             senha: "",
             foto: UIImage())
     }
+    convenience init(nome: String, cargo: String, email: String, senha: String) {
+        // Pode definir um valor padrão para senha e foto aqui
+        self.init(
+            nome: nome,
+            cargo: cargo,
+            email: email,
+            senha: senha,
+            foto: UIImage())
+    }
     
     func setFotoFromURL(_ url: URL, completion: @escaping (UIImage?) -> Void) {
         URLSession.shared.dataTask(with: url) { data, _, error in

@@ -9,24 +9,60 @@ import SwiftUI
 
 struct RegisterPage: View {
     @State var email: String = ""
-    @State var password: String = ""
+    @State var nome: String = ""
+    @State var cargo: String = ""
+    @State var senha: String = ""
+    @State var confirmarSenha: String = ""
     
-    @State var emailCerto: String = "Admin@admin"
-    @State var passwordCerta: String = "123"
+    var usuarios = Sistema.shared.usuarios
     
-    @State var isAuthenticated: Bool = false
-    
-    func checkLogin() {
-        if email == emailCerto && password == passwordCerta{
-            isAuthenticated = true
-            print(isAuthenticated)
-            
-            
-        } else {
-            isAuthenticated = false
+
+    func registrarUsuario() -> (Bool){
+        if email.isEmpty || !email.contains("@") {
+            print("Email invalido.")
+            return false
         }
+        
+        for usuario in Sistema.shared.usuarios {
+            if usuario.email.lowercased() == email.lowercased() {
+                print("Email em uso.")
+                return false
+            }
+        }
+        
+        if senha != confirmarSenha && !senha.isEmpty {
+            print("As senhas devem ser iguais.")
+            return false
+        }
+        
+        if nome.isEmpty {
+            print("Nome não pode estar vazio.")
+            return false
+        }
+        
+        if cargo.isEmpty {
+            print("Cargo não pode estar vazio.")
+            return false
+        }
+        
+        Sistema.shared.usuarios.append(
+            Usuario(nome: nome, cargo: cargo, email: email, senha: senha)
+        )
+        
+        print("Usuario criado!")
+        for usuario in Sistema.shared.usuarios {
+            print(usuario.email)
+        }
+        print("Lista de usuarios: ", Sistema.shared.usuarios)
+        
+        email = ""
+        nome = ""
+        cargo = ""
+        senha = ""
+        confirmarSenha = ""
+        
+        return true
     }
-    
     
     
     var body: some View {
@@ -51,28 +87,28 @@ struct RegisterPage: View {
                         
                         Spacer().frame(height: 10)
                         
-                        TextField("Nome", text: $email)
+                        TextField("Nome", text: $nome)
                             .padding(10)
                             .background(Color("InputBackground"))
                             .cornerRadius(8.0)
                         
                         Spacer().frame(height: 10)
                         
-                        TextField("Cargo", text: $email)
+                        TextField("Cargo", text: $cargo)
                             .padding(10)
                             .background(Color("InputBackground"))
                             .cornerRadius(8.0)
                         
                         Spacer().frame(height: 10)
                         
-                        SecureField("Senha", text: $password)
+                        SecureField("Senha", text: $senha)
                             .padding(10)
                             .background(Color("InputBackground"))
                             .cornerRadius(8.0)
                         
                         Spacer().frame(height: 10)
                         
-                        SecureField("Confirmar Senha", text: $password)
+                        SecureField("Confirmar Senha", text: $confirmarSenha)
                             .padding(10)
                             .background(Color("InputBackground"))
                             .cornerRadius(8.0)
@@ -81,36 +117,20 @@ struct RegisterPage: View {
                     
                     Spacer().frame(height: 20)
                 
+                    Button("Registrar"){
+                        registrarUsuario()
+                    }
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(.white)
+                    .padding(10)
+                    .frame(maxWidth: .infinity)
+                    .background(Color("ButtonColor"))
+                    .cornerRadius(8)
+                   
                     
-                    NavigationLink(destination: MenuView()) {
+                    NavigationLink(destination: ContentView()) {
                         Text("Entrar")
-                            .font(.title2)
-                            .bold()
-                            .foregroundColor(.white)
-                            .padding(10)
-                            .frame(maxWidth: .infinity)
-                            .background(Color("ButtonColor"))
-                            .cornerRadius(8)
-                    }
-                    .alert(isPresented: $isAuthenticated) {
-                        Alert(
-                            title: Text("Autenticação"),
-                            message: Text("Login bem sucedido!"),
-                            dismissButton: .default(Text("OK"))
-                        )
-                    }
-                    
-                    NavigationLink(destination: ForgetPasswordPage()) {
-                        Text("Esqueceu sua senha?")
-                            .font(.title3)
-                            .bold()
-                            .foregroundColor(.white)
-                            .padding(0)
-                            .frame(maxWidth: .infinity)
-                    }
-                    
-                    NavigationLink(destination: RegisterPage()) {
-                        Text("Registre-se")
                             .font(.title3)
                             .bold()
                             .foregroundColor(.white)
