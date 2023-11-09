@@ -23,6 +23,8 @@
 		B4AB88CF2AFAD05000A001AE /* Destaque.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88CE2AFAD05000A001AE /* Destaque.swift */; };
 		B4AB88D12AFAD08D00A001AE /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88D02AFAD08D00A001AE /* Usuario.swift */; };
 		B4AB88D32AFADE1700A001AE /* Sistema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AB88D22AFADE1700A001AE /* Sistema.swift */; };
+		B4C6C33C2AFD04090053CA93 /* HeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C6C33B2AFD04090053CA93 /* HeaderTitle.swift */; };
+		B4C6C33E2AFD26040053CA93 /* CardReuniao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C6C33D2AFD26040053CA93 /* CardReuniao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		B4AB88CE2AFAD05000A001AE /* Destaque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destaque.swift; sourceTree = "<group>"; };
 		B4AB88D02AFAD08D00A001AE /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		B4AB88D22AFADE1700A001AE /* Sistema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sistema.swift; sourceTree = "<group>"; };
+		B4C6C33B2AFD04090053CA93 /* HeaderTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitle.swift; sourceTree = "<group>"; };
+		B4C6C33D2AFD26040053CA93 /* CardReuniao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardReuniao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				B4AB88C42AFAB15300A001AE /* NavBar.swift */,
+				B4C6C33B2AFD04090053CA93 /* HeaderTitle.swift */,
+				B4C6C33D2AFD26040053CA93 /* CardReuniao.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -214,10 +220,12 @@
 				B484AF8C2ADE0EB200AF2D1D /* ForgetPasswordPage.swift in Sources */,
 				B4AB88CF2AFAD05000A001AE /* Destaque.swift in Sources */,
 				B4AB88C52AFAB15300A001AE /* NavBar.swift in Sources */,
+				B4C6C33E2AFD26040053CA93 /* CardReuniao.swift in Sources */,
 				B4AB88C92AFAC8E700A001AE /* AdicionarReuniao.swift in Sources */,
 				B4AB88CB2AFACA0800A001AE /* Configuracoes.swift in Sources */,
 				B484AF8A2ADE05FC00AF2D1D /* RegisterPage.swift in Sources */,
 				B4AB88C22AFAA7CA00A001AE /* Reuniao.swift in Sources */,
+				B4C6C33C2AFD04090053CA93 /* HeaderTitle.swift in Sources */,
 				B4AB88C72AFAB29A00A001AE /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
