@@ -17,32 +17,33 @@ struct RegisterPage: View {
     var usuarios = Sistema.shared.usuarios
     
 
-    func registrarUsuario() -> (Bool){
+    func registrarUsuario() -> (AnyView){
+        
         if email.isEmpty || !email.contains("@") {
             print("Email invalido.")
-            return false
+            return AnyView(RegisterPage())
         }
         
         for usuario in Sistema.shared.usuarios {
             if usuario.email.lowercased() == email.lowercased() {
                 print("Email em uso.")
-                return false
+                return AnyView(RegisterPage())
             }
         }
         
         if senha != confirmarSenha && !senha.isEmpty {
             print("As senhas devem ser iguais.")
-            return false
+            return AnyView(RegisterPage())
         }
         
         if nome.isEmpty {
             print("Nome não pode estar vazio.")
-            return false
+            return AnyView(RegisterPage())
         }
         
         if cargo.isEmpty {
             print("Cargo não pode estar vazio.")
-            return false
+            return AnyView(RegisterPage())
         }
         
         Sistema.shared.usuarios.append(
@@ -50,10 +51,15 @@ struct RegisterPage: View {
         )
         
         print("Usuario criado!")
+        
         for usuario in Sistema.shared.usuarios {
             print(usuario.email)
         }
-        print("Lista de usuarios: ", Sistema.shared.usuarios)
+        
+              
+        for usuario in Sistema.shared.usuarios {
+            print(usuario.toString())
+        }
         
         email = ""
         nome = ""
@@ -61,7 +67,9 @@ struct RegisterPage: View {
         senha = ""
         confirmarSenha = ""
         
-        return true
+        
+        
+        return AnyView(MenuView())
     }
     
     

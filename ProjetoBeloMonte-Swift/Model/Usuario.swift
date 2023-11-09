@@ -46,6 +46,12 @@ class Usuario {
             foto: UIImage())
     }
     
+    func toString() -> (String){
+        return "Nome: " + self.nome + "\n" +
+                "Cargo: " + self.cargo + "\n" +
+                "Email: " + self.email;
+    }
+    
     func setFotoFromURL(_ url: URL, completion: @escaping (UIImage?) -> Void) {
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let data = data, let image = UIImage(data: data) {

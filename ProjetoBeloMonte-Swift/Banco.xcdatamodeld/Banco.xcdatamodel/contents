@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Destaque" representedClassName="Destaque" syncable="YES" codeGenerationType="class"/>
+    <entity name="Entity1" representedClassName="Entity1" syncable="YES" codeGenerationType="class"/>
+    <entity name="Reuniao" representedClassName="Reuniao" syncable="YES" codeGenerationType="class"/>
+    <entity name="Screen" representedClassName="Screen" syncable="YES" codeGenerationType="class"/>
+    <entity name="Sistema" representedClassName="Sistema" syncable="YES" codeGenerationType="class"/>
+    <entity name="Usuario" representedClassName="Usuario" syncable="YES" codeGenerationType="class"/>
+</model>
