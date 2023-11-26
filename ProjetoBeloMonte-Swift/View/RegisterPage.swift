@@ -105,6 +105,7 @@ struct RegisterPage: View {
                             .padding(10)
                             .background(Color("InputBackground"))
                             .cornerRadius(8.0)
+                            .textContentType(.oneTimeCode)
                         
                         Spacer().frame(height: 10)
                         
@@ -112,6 +113,7 @@ struct RegisterPage: View {
                             .padding(10)
                             .background(Color("InputBackground"))
                             .cornerRadius(8.0)
+                            .textContentType(.oneTimeCode)
                     }
                     
                     
