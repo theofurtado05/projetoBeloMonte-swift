@@ -9,8 +9,12 @@ import Foundation
 
 class Destaque {
     var titulo: String
+    var urlImg: String
     
-    init(titulo: String){
+//    var topicos: Object
+    
+    init(titulo: String, urlImg: String){
         self.titulo = titulo
+        self.urlImg = urlImg
     }
 }

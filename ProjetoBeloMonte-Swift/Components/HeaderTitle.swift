@@ -33,6 +33,10 @@ struct HeaderTitleView: View{
         }
         .frame(maxWidth: .infinity, alignment: .leading) 
         .padding(.horizontal)
+        
+        Divider()
+            .frame(height: 0.5)
+            .overlay(Color("PrimaryColor"))
     }
 }
 

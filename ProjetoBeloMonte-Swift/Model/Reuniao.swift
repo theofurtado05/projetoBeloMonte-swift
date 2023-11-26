@@ -9,31 +9,52 @@ import Foundation
 
 class Reuniao: Hashable, Equatable {
     
-    var titulo: String
-    var data: Date
-    var horaInicio: String
-    var horaFinal: String
+    var nomeEvento: String
+    var participantes: String
+    var dataInicio: Date
+    var dataFinal: Date
+    var localizacao: String
+    var status: String
+    var notificacao: String
+    var descricao: String
     
-    init (titulo: String, data: Date, horaInicio: String, horaFinal: String){
-        self.titulo = titulo
-        self.data = data
-        self.horaInicio = horaFinal
-        self.horaFinal = horaFinal
+    
+    init (nomeEvento: String, participantes: String, dataInicio: Date, dataFinal: Date, localizacao: String, status: String, notificacao: String, descricao: String){
+        self.nomeEvento = nomeEvento
+        self.participantes = participantes
+        self.dataInicio = dataInicio
+        self.dataFinal = dataFinal
+        self.localizacao = localizacao
+        self.status = status
+        self.notificacao = notificacao
+        self.descricao = descricao
+    }
+    
+    init (){
+        self.nomeEvento = ""
+        self.participantes = ""
+        self.dataInicio = Date()
+        self.dataFinal = Date()
+        self.localizacao = ""
+        self.status = ""
+        self.notificacao = ""
+        self.descricao = ""
     }
     
     // Implementação do protocolo Hashable
     func hash(into hasher: inout Hasher) {
-        hasher.combine(titulo)
-        hasher.combine(data)
-        hasher.combine(horaInicio)
-        hasher.combine(horaFinal)
+        hasher.combine(nomeEvento)
+        hasher.combine(dataInicio)
+        hasher.combine(dataFinal)
     }
     
     // Implementação do protocolo Equatable
     static func == (lhs: Reuniao, rhs: Reuniao) -> Bool {
-        return lhs.titulo == rhs.titulo &&
-               lhs.data == rhs.data &&
-               lhs.horaInicio == rhs.horaInicio &&
-               lhs.horaFinal == rhs.horaFinal
+        return lhs.nomeEvento == rhs.nomeEvento &&
+               lhs.dataInicio == rhs.dataInicio &&
+               lhs.dataFinal == rhs.dataFinal
     }
 }
+
+
+

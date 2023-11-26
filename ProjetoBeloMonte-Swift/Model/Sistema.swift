@@ -11,7 +11,16 @@ import Foundation
 class Sistema {
     static var shared = Sistema()
     var usuarios = [Usuario]()
-//    var usuarios: [Usuario] = [
-//        Usuario(nome: "Theo", cargo: "CTO", email: "theo@123")
-//    ]
+
+        
+    var reunioes: [Reuniao] = [
+        Reuniao(nomeEvento: "Reuniao - 1", participantes: "theofurtado05@gmail.com", dataInicio: Date(), dataFinal: Date(), localizacao: "Rio de Janeiro", status: "Ocupado", notificacao: "Ativo", descricao: "Reuniao da ap2")
+    ]
+    
+    var destaques: [Destaque] = []
+    
+    
+    var activeReuniao: Reuniao = Reuniao()
+    
+    
 }

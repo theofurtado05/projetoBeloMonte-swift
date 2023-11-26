@@ -9,59 +9,70 @@ import SwiftUI
 
 struct MenuView: View {
     
-    @State var minhasReunioes: [Reuniao] = [
-        Reuniao(titulo: "Reuniao 1", data: Date(), horaInicio: "13:35", horaFinal: "14:00"),
-        Reuniao(titulo: "Reuniao 2", data: Date(), horaInicio: "13:35", horaFinal: "14:00"),
-        Reuniao(titulo: "Reuniao 3", data: Date(), horaInicio: "13:35", horaFinal: "14:00"),
-        Reuniao(titulo: "Reuniao 4", data: Date(), horaInicio: "13:35", horaFinal: "14:00"),
-        Reuniao(titulo: "Reuniao 5", data: Date(), horaInicio: "13:35", horaFinal: "14:00"),
-        Reuniao(titulo: "Reuniao 6", data: Date(), horaInicio: "13:35", horaFinal: "14:00")
-    ]
-    
+    @State var reuniaoAtiva: Bool = false
     
     func formatDate(_ date: Date) -> String {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy"
             return dateFormatter.string(from: date)
-        }
+    }
+    
+    func extrairHoraDeData(_ data: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: data)
+    }
+    
+    func acessarReuniao(reuniao: Reuniao){
+        Sistema.shared.activeReuniao = reuniao
+        reuniaoAtiva = true
+        print(Sistema.shared.activeReuniao.nomeEvento)
+    }
     
    
-    
     var body: some View {
         ZStack {
             NavigationView{
-            VStack{
                 VStack{
-                    MultiDatePicker(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/, selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Binding<Set<DateComponents>>@*/.constant([])/*@END_MENU_TOKEN@*/).padding()
-                }
-                
-                Divider()
-                
-                
-                
-                VStack{
-                    ScrollView{
-                            ForEach(minhasReunioes, id: \.self) { reuniao in
-                                GroupBox(label: Text(reuniao.titulo)) {
+                    NavigationLink(destination: ActiveReuniao(), isActive: $reuniaoAtiva) {
+                        EmptyView()
+                    }
+                    
+                    VStack{
+                        MultiDatePicker("Label"/*@END_MENU_TOKEN@*/, selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Binding<Set<DateComponents>>@*/.constant([])).padding()
+                    }
+                    
+                    Divider()
+                    
+                    VStack{
+                        ScrollView{
+                            ForEach(Sistema.shared.reunioes, id: \.self) { reuniao in
+                                GroupBox(label:
+                                            Text(reuniao.nomeEvento)) {
                                     HStack {
                                         HStack {
                                             Image(systemName: "clock")
-                                            Text(reuniao.horaInicio)
+                                            Text(extrairHoraDeData(reuniao.dataInicio))
                                         }
                                         HStack {
                                             Image(systemName: "calendar")
-                                            Text(formatDate(reuniao.data))
+                                            Text(formatDate(reuniao.dataInicio))
                                         }
+                                        
                                         Spacer()
+                                        Image(systemName: "chevron.right")
+                                    }.onTapGesture {
+                                        acessarReuniao(reuniao: reuniao)
                                     }
                                 }
+                                
                             }
                         }
+                        
+                    }.ignoresSafeArea()
                     
-                }.ignoresSafeArea()
-                
-                NavBar()
-                
+                    NavBar()
+                    
                 }
             }
         }.navigationBarBackButtonHidden(true)

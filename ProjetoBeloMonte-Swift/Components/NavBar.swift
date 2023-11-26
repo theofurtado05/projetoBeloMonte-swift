@@ -57,6 +57,6 @@ struct NavBar: View {
 
 struct NavBar_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        Hoje()
     }
 }
