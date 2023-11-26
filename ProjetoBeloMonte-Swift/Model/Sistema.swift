@@ -42,5 +42,11 @@ class Sistema {
     
     var activeReuniao: Reuniao = Reuniao()
     
+    var activeDestaque: Destaque = Sistema.shared.destaques.first ?? Destaque()
+//    var activeDestaque: Destaque = Destaque(titulo: "Princípios", img: "destaque2", topicos: [
+//        Topico(titulo: "Missão", texto: "Gerar energia e desenvolvimento sustentável para o crescimento do Brasil."),
+//        Topico(titulo: "Visão", texto: "Ser uma empresa respeitada e admirada no setor elétrico mundial, que fomenta o desenvolvimento econômico e social e é comprometida com projetos que elevam a qualidade de vida da população da região onde atua."),
+//        Topico(titulo: "Valores", texto: "Comportamento ético; Respeito às pessoas e ao meio ambiente, assim como ao patrimônio da empresa; Foco nos resultados; Coragem e perseverança;")
+//    ])
     
 }

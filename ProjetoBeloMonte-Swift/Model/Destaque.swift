@@ -11,6 +11,12 @@ class Destaque: Hashable, Equatable {
     var titulo: String
     var img: String
     var topicos: [Topico]
+    
+    init(){
+        self.titulo = ""
+        self.img = ""
+        self.topicos = []
+    }
 
     
     init(titulo: String, img: String, topicos: [Topico]){
@@ -34,12 +40,25 @@ class Destaque: Hashable, Equatable {
 }
 
 
-class Topico {
+class Topico: Hashable, Equatable {
     var titulo: String
     var texto: String
     
     init(titulo: String, texto: String){
         self.titulo = titulo
         self.texto = texto
+    }
+    
+    // Implementação do protocolo Hashable
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(titulo)
+        hasher.combine(texto)
+        
+    }
+    
+    // Implementação do protocolo Equatable
+    static func == (lhs: Topico, rhs: Topico) -> Bool {
+        return lhs.titulo == rhs.titulo &&
+               lhs.texto == rhs.texto
     }
 }

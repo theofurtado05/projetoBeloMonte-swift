@@ -10,14 +10,25 @@ import SwiftUI
 struct Hoje: View {
     let header = HeaderTitle(title: "Hoje", goTo: AnyView(MenuView()))
     
+    @State var destaqueAtivo: Bool = false
+    
+    func acessarDestaque(destaque: Destaque){
+        Sistema.shared.activeDestaque = destaque
+        destaqueAtivo = true
+        
+    }
+    
     var body: some View {
         ZStack {
             NavigationView {
                 VStack(spacing: 0) {
-                    // Header preso no topo
+                    NavigationLink(destination: ActiveDestaque(), isActive: $destaqueAtivo) {
+                        EmptyView()
+                    }
+                    
                     HeaderTitleView(header: header)
                     
-                    // ScrollView para o conteúdo rolável
+                    
                     ScrollView {
                         VStack {
                             Text("Destaques")
@@ -26,7 +37,9 @@ struct Hoje: View {
                             
                             ForEach(Sistema.shared.destaques, id: \.self) { destaque in
                                 HStack {
-                                    CardView(destaque: destaque)
+                                    CardView(destaque: destaque).onTapGesture{
+                                        acessarDestaque(destaque: destaque)
+                                    }
                                 }
                             }
                         }
@@ -49,6 +62,6 @@ struct Hoje: View {
 
 struct Hoje_Previews: PreviewProvider {
     static var previews: some View {
-        Hoje().navigationBarBackButtonHidden(true)
+        Hoje()
     }
 }
