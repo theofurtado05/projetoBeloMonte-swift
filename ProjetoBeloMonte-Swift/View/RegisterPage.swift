@@ -52,14 +52,6 @@ struct RegisterPage: View {
         
         print("Usuario criado!")
         
-        for usuario in Sistema.shared.usuarios {
-            print(usuario.email)
-        }
-        
-              
-        for usuario in Sistema.shared.usuarios {
-            print(usuario.toString())
-        }
         
         email = ""
         nome = ""

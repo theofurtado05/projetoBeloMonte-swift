@@ -3,29 +3,42 @@ import SwiftUI
 struct ContentView: View {
     @State var email: String = ""
     @State var password: String = ""
-    
-    @State var emailCerto: String = "Admin@admin"
-    @State var passwordCerta: String = "123"
-    
+    @State var isError: Bool = false
+        
     @State var isAuthenticated: Bool = false
     
-    func checkLogin() {
-        if email == emailCerto && password == passwordCerta{
-            isAuthenticated = true
-            print(isAuthenticated)
+    
+    
+    func Login() -> (AnyView){
+        
+        for usuario in Sistema.shared.usuarios {
+            print(usuario.toString())
+            if usuario.email.lowercased() == email.lowercased() {
+                if(usuario.senha == password){
+                    isAuthenticated = true
+                    return AnyView(MenuView())
+                } else {
+                    isError = true
+                }
+            } else {
+                isError = true
+            }
             
-            
-        } else {
-            isAuthenticated = false
         }
+        
+        isError = true
+        
+        return AnyView(ContentView())
     }
     
     
     
     var body: some View {
         NavigationView{
-            
             ZStack{
+                NavigationLink(destination: MenuView(), isActive: $isAuthenticated) {
+                    EmptyView()
+                }
                 Color("BackgroundColor").ignoresSafeArea()
                 
                 VStack{
@@ -52,22 +65,21 @@ struct ContentView: View {
                     
                     
                     Spacer().frame(height: 20)
-                
                     
-                    NavigationLink(destination: MenuView()) {
-                        Text("Entrar")
-                            .font(.title2)
-                            .bold()
-                            .foregroundColor(.white)
-                            .padding(10)
-                            .frame(maxWidth: .infinity)
-                            .background(Color("ButtonColor"))
-                            .cornerRadius(8)
+                    Button("Entrar"){
+                        Login()
                     }
-                    .alert(isPresented: $isAuthenticated) {
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(.white)
+                    .padding(10)
+                    .frame(maxWidth: .infinity)
+                    .background(Color("ButtonColor"))
+                    .cornerRadius(8)
+                    .alert(isPresented: $isError) {
                         Alert(
-                            title: Text("Autenticação"),
-                            message: Text("Login bem sucedido!"),
+                            title: Text("Erro ao logar"),
+                            message: Text("Email ou senha inválidos."),
                             dismissButton: .default(Text("OK"))
                         )
                     }

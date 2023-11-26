@@ -26,14 +26,16 @@ struct Hoje: View {
                         EmptyView()
                     }
                     
+                    
                     HeaderTitleView(header: header)
                     
                     
                     ScrollView {
-                        VStack {
+                        VStack(alignment: .leading, spacing: 10) {
                             Text("Destaques")
                                 .fontWeight(.bold)
                                 .multilineTextAlignment(.leading)
+                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 10))
                             
                             ForEach(Sistema.shared.destaques, id: \.self) { destaque in
                                 HStack {
@@ -47,12 +49,11 @@ struct Hoje: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
-                    // NavBar preso na parte inferior
                     NavBar()
                 }
             }
             .navigationBarBackButtonHidden(true)
-            .edgesIgnoringSafeArea(.all) // Ignora as áreas seguras para ocupar toda a tela
+            .edgesIgnoringSafeArea(.all)
         }
         .frame(height: .infinity)
     }

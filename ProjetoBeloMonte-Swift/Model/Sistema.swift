@@ -25,7 +25,18 @@ class Sistema {
         ]),
         
         Destaque(titulo: "Composição Acionária", img: "destaque2", topicos: [
-            Topico(titulo: "", texto: "A Norte Energia é composta por Empresas de diferentes segmentos de atuação e por fundos de previdência complementar.")
+            Topico(titulo: "", texto: "A Norte Energia é composta por Empresas de diferentes segmentos de atuação e por fundos de previdência complementar."),
+            Topico(titulo: "Conselho de Administração", texto: "Pedro Luiz de Oliveira Jatobá - Presidente Titular | Jonatan Ross - Suplente"),
+            Topico(titulo: "", texto: "Rodrigo Limp Nascimento - Titular | Waldenir Alexandre da Silva Cruz - Suplente"),
+            Topico(titulo: "", texto: "Ruy Flaks Schneider - Titular | Patrícia de Carvalho Moreira - Suplente"),
+            Topico(titulo: "", texto: "Fábio Lopes Alves  - Titular | Reive Barros dos Santos - Suplente"),
+            Topico(titulo: "", texto: "Ana Silvia Corso Matte - Titular | Antonio Augusto Bechara Pardauil - Suplente"),
+            Topico(titulo: "", texto: "Susana Hanna Stiphan Jabra - Titular | Carlos Alberto Nolasco - Suplente"),
+            Topico(titulo: "", texto: "Nélio Henriques Lima - Titular | Sergio Tadeu Nabas - Suplente"),
+            Topico(titulo: "", texto: "Solange Maria Pinto Ribeiro - Titular | Marcelo José Cavalcanti Lopes - Suplente"),
+            Topico(titulo: "", texto: "Ludmila Lopes Nascimento Brasil - Titular | Douglas Braga Ferraz de Oliveira Xavier - Suplente"),
+            Topico(titulo: "", texto: "Luiz Eduardo Barata Ferreira - Titular | Rodrigo Domingues Vilela - Suplente"),
+            Topico(titulo: "", texto: "Marina Freitas Gonçalves de Araújo Grossi - Independente | Leonardo de Paiva Rocha - Independente")
         ]),
         
         Destaque(titulo: "Governança Corporativa", img: "destaque3", topicos: [
@@ -42,7 +53,7 @@ class Sistema {
     
     var activeReuniao: Reuniao = Reuniao()
     
-    var activeDestaque: Destaque = Sistema.shared.destaques.first ?? Destaque()
+    var activeDestaque: Destaque = Destaque()
 //    var activeDestaque: Destaque = Destaque(titulo: "Princípios", img: "destaque2", topicos: [
 //        Topico(titulo: "Missão", texto: "Gerar energia e desenvolvimento sustentável para o crescimento do Brasil."),
 //        Topico(titulo: "Visão", texto: "Ser uma empresa respeitada e admirada no setor elétrico mundial, que fomenta o desenvolvimento econômico e social e é comprometida com projetos que elevam a qualidade de vida da população da região onde atua."),
