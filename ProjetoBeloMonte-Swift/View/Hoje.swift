@@ -11,35 +11,44 @@ struct Hoje: View {
     let header = HeaderTitle(title: "Hoje", goTo: AnyView(MenuView()))
     
     var body: some View {
-        
-            ZStack{
-                NavigationView{
-                    
-                VStack{
+        ZStack {
+            NavigationView {
+                VStack(spacing: 0) {
+                    // Header preso no topo
                     HeaderTitleView(header: header)
-                    VStack{
-                        Text("Destaques")
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.leading)
-                        
-                        ForEach(Sistema.shared.reunioes, id: \.self) {  reuniao in
-                            HStack{
-                                Text("Teste")
+                    
+                    // ScrollView para o conteúdo rolável
+                    ScrollView {
+                        VStack {
+                            Text("Destaques")
+                                .fontWeight(.bold)
+                                .multilineTextAlignment(.leading)
+                            
+                            ForEach(Sistema.shared.destaques, id: \.self) { destaque in
+                                HStack {
+                                    CardView(destaque: destaque)
+                                }
                             }
                         }
-                    }.frame(width: .infinity, height: .infinity)
+                        .padding()
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
+                    // NavBar preso na parte inferior
                     NavBar()
                 }
             }
-        }.navigationBarBackButtonHidden(true)
-            .frame(height: .infinity)
-            
+            .navigationBarBackButtonHidden(true)
+            .edgesIgnoringSafeArea(.all) // Ignora as áreas seguras para ocupar toda a tela
+        }
+        .frame(height: .infinity)
     }
 }
 
+
+
 struct Hoje_Previews: PreviewProvider {
     static var previews: some View {
-        Hoje()
+        Hoje().navigationBarBackButtonHidden(true)
     }
 }

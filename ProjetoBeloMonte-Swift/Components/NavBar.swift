@@ -49,7 +49,7 @@ struct NavBar: View {
          }
          .frame(height: 15.0)
          .ignoresSafeArea()
-         .padding(.horizontal, 5.0)
+         .padding([.top, .leading, .trailing], 10.0)
          .padding(.top, 4.0)
         .background(Color.white)
     }

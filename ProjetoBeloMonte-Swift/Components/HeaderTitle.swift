@@ -33,6 +33,7 @@ struct HeaderTitleView: View{
         }
         .frame(maxWidth: .infinity, alignment: .leading) 
         .padding(.horizontal)
+        .padding(.bottom, 5)
         
         Divider()
             .frame(height: 0.5)
@@ -43,7 +44,7 @@ struct HeaderTitleView: View{
 
 struct HeaderTitleView_previews: PreviewProvider {
     static var previews: some View {
-        AdicionarReuniao()
+        Hoje()
     }
 }
 
