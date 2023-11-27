@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct MenuView: View {
     
     @State var reuniaoAtiva: Bool = false
@@ -31,8 +32,8 @@ struct MenuView: View {
     
     @State private var selectedDates: Set<DateComponents> = []
     
+   
     
-
     var body: some View {
         ZStack {
             NavigationView{
@@ -43,8 +44,10 @@ struct MenuView: View {
                     
                     VStack{
                         MultiDatePicker("Label", selection: $selectedDates)
-                                    .padding()
+                            .padding()
+                            
                         
+                                    
 
                     }
                     
@@ -53,28 +56,29 @@ struct MenuView: View {
                     VStack{
                         ScrollView{
                             ForEach(Sistema.shared.reunioes, id: \.self) { reuniao in
-                                
-                                GroupBox(label:
-                                            Text(reuniao.nomeEvento)) {
-                                    HStack {
+                                // Se não houver datas selecionadas ou se a data da reunião estiver na lista de datas selecionadas
+                                if selectedDates.isEmpty || selectedDates.contains(where: { formatDate($0.date!) == formatDate(reuniao.dataInicio) }) {
+                                    GroupBox(label: Text(reuniao.nomeEvento)) {
                                         HStack {
-                                            Image(systemName: "clock")
-                                            Text(extrairHoraDeData(reuniao.dataInicio))
-                                        }.opacity(0.6)
-                                        HStack {
-                                            Image(systemName: "calendar")
-                                            Text(formatDate(reuniao.dataInicio))
-                                        }.opacity(0.6)
-                                        
-                                        Spacer()
-                                        Image(systemName: "chevron.right")
-                                            .foregroundColor(Color("PrimaryColor"))
-                                    }.onTapGesture {
-                                        acessarReuniao(reuniao: reuniao)
-                                        print(reuniao.dataInicio)
+                                            HStack {
+                                                Image(systemName: "clock")
+                                                Text(extrairHoraDeData(reuniao.dataInicio))
+                                            }.opacity(0.6)
+                                            HStack {
+                                                Image(systemName: "calendar")
+                                                Text(formatDate(reuniao.dataInicio))
+                                            }.opacity(0.6)
+                                            
+                                            Spacer()
+                                            Image(systemName: "chevron.right")
+                                                .foregroundColor(Color("PrimaryColor"))
+                                        }.onTapGesture {
+                                            acessarReuniao(reuniao: reuniao)
+                                            print(reuniao.dataInicio)
+                                        }
                                     }
                                 }
-                                
+                            
                             }
                         }
                         
