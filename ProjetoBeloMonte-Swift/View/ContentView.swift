@@ -15,6 +15,7 @@ struct ContentView: View {
             print(usuario.toString())
             if usuario.email.lowercased() == email.lowercased() {
                 if(usuario.senha == password){
+                    isError = false
                     isAuthenticated = true
                     return AnyView(MenuView())
                 } else {

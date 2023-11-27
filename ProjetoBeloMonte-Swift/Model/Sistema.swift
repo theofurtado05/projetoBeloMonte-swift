@@ -10,11 +10,13 @@ import Foundation
 
 class Sistema {
     static var shared = Sistema()
-    var usuarios = [Usuario]()
+    var usuarios: [Usuario] = [
+        Usuario(nome: "Theo", cargo: "CTO", email: "theofurtado05@gmail.com", senha: "123456")
+    ]
 
         
     var reunioes: [Reuniao] = [
-        Reuniao(nomeEvento: "Apresentação App", participantes: ["Théo Furtado", "Thiago Souza",  "Victor Machado"], dataInicio: Date(), dataFinal: Date(), localizacao: "Rio de Janeiro", status: "Ocupado", notificacao: 5, descricao: "Reunião de apresentação do APP para a Norte Energia", repetir: false)
+        Reuniao(nomeEvento: "Apresentação App", participantes: ["Théo Furtado", "Thiago Souza",  "Victor Machado", "Denis", "Jean"], dataInicio: Date(), dataFinal: Date(), localizacao: "Rio de Janeiro", status: "Ocupado", notificacao: 5, descricao: "Reunião de apresentação do APP para a Norte Energia", repetir: false)
     ]
     
     var destaques: [Destaque] = [
@@ -54,10 +56,23 @@ class Sistema {
     var activeReuniao: Reuniao = Reuniao()
     
     var activeDestaque: Destaque = Destaque()
-//    var activeDestaque: Destaque = Destaque(titulo: "Princípios", img: "destaque2", topicos: [
-//        Topico(titulo: "Missão", texto: "Gerar energia e desenvolvimento sustentável para o crescimento do Brasil."),
-//        Topico(titulo: "Visão", texto: "Ser uma empresa respeitada e admirada no setor elétrico mundial, que fomenta o desenvolvimento econômico e social e é comprometida com projetos que elevam a qualidade de vida da população da região onde atua."),
-//        Topico(titulo: "Valores", texto: "Comportamento ético; Respeito às pessoas e ao meio ambiente, assim como ao patrimônio da empresa; Foco nos resultados; Coragem e perseverança;")
-//    ])
     
+    var activeError: Error = Error()
+    
+}
+
+
+class Error {
+    var titulo: String
+    var texto: String
+    
+    init(titulo: String, texto: String){
+        self.titulo = titulo
+        self.texto = texto
+    }
+    
+    init(){
+        self.titulo = ""
+        self.texto = ""
+    }
 }

@@ -14,6 +14,9 @@ struct RegisterPage: View {
     @State var senha: String = ""
     @State var confirmarSenha: String = ""
     
+    @State var isError: Bool = false
+    
+    
     var usuarios = Sistema.shared.usuarios
     
 
@@ -21,28 +24,45 @@ struct RegisterPage: View {
         
         if email.isEmpty || !email.contains("@") {
             print("Email invalido.")
+            Sistema.shared.activeError = Error(titulo: "Erro ao registrar!", texto: "Email invalido.")
+            isError = true
             return AnyView(RegisterPage())
         }
         
         for usuario in Sistema.shared.usuarios {
             if usuario.email.lowercased() == email.lowercased() {
                 print("Email em uso.")
+                Sistema.shared.activeError = Error(titulo: "Erro ao registrar!", texto: "Email em uso.")
+                isError = true
                 return AnyView(RegisterPage())
             }
         }
         
+        if senha.count < 6 {
+            print("A senha deve conter 6 ou mais caracteres.")
+            Sistema.shared.activeError = Error(titulo: "Erro ao registrar!", texto: "As senhas devem conter 6 ou mais caracteres.")
+            isError = true
+            return AnyView(RegisterPage())
+        }
+        
         if senha != confirmarSenha && !senha.isEmpty {
             print("As senhas devem ser iguais.")
+            Sistema.shared.activeError = Error(titulo: "Erro ao registrar!", texto: "As senhas devem ser iguais.")
+            isError = true
             return AnyView(RegisterPage())
         }
         
         if nome.isEmpty {
             print("Nome não pode estar vazio.")
+            Sistema.shared.activeError = Error(titulo: "Erro ao registrar!", texto: "Nome não pode estar vazio.")
+            isError = true
             return AnyView(RegisterPage())
         }
         
         if cargo.isEmpty {
             print("Cargo não pode estar vazio.")
+            Sistema.shared.activeError = Error(titulo: "Erro ao registrar!", texto: "Cargo não pode estar vazio.")
+            isError = true
             return AnyView(RegisterPage())
         }
         
@@ -51,7 +71,8 @@ struct RegisterPage: View {
         )
         
         print("Usuario criado!")
-        
+        Sistema.shared.activeError = Error(titulo: "Sucesso!", texto: "Usuario criado")
+        isError = true
         
         email = ""
         nome = ""
@@ -129,6 +150,13 @@ struct RegisterPage: View {
                     .frame(maxWidth: .infinity)
                     .background(Color("ButtonColor"))
                     .cornerRadius(8)
+                    .alert(isPresented: $isError) {
+                        Alert(
+                            title: Text(Sistema.shared.activeError.titulo),
+                            message: Text(Sistema.shared.activeError.texto),
+                            dismissButton: .default(Text("OK"))
+                        )
+                    }
                    
                     
                     NavigationLink(destination: ContentView()) {

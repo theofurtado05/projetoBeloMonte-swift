@@ -33,6 +33,19 @@ class Reuniao: Hashable, Equatable {
         self.repetir = repetir
     }
     
+    init (nomeEvento: String, dataInicio: Date){
+        self.nomeEvento = nomeEvento
+        self.participantes = []
+        self.dataInicio = dataInicio
+        self.dataFinal = Date()
+        self.localizacao = ""
+        self.status = ""
+        self.notificacao = 5
+        self.descricao = ""
+        self.convidados = []
+        self.repetir = true
+    }
+    
     init (){
         self.nomeEvento = ""
         self.participantes = []

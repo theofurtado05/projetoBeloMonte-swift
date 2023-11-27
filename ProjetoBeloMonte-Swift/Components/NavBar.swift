@@ -27,32 +27,40 @@ struct NavBar: View {
     
 
     var body: some View {
-         HStack(alignment: .bottom, spacing: 25.0){
-          
-            ForEach(minhasScreen, id: \.self) { screen in
-                 
-                 NavigationLink(destination: screen.pageTo){
-                    VStack{
-                         Image(systemName: screen.icon)
-                              .foregroundColor(Color.black)
-                              
-                         Text(screen.titulo)
-                              .font(.caption)
-                              .foregroundColor(Color.black)
-                              .multilineTextAlignment(.center)
-                    }
-                    
-                }
-                .ignoresSafeArea()
-                
-                
-            }
+         VStack(alignment: .center, spacing: 10){
+              HStack(alignment: .center, spacing: 30.0){
+               
+                 ForEach(minhasScreen, id: \.self) { screen in
+                      
+                      NavigationLink(destination: screen.pageTo){
+                         VStack{
+                              Image(systemName: screen.icon)
+                                  .foregroundColor(Color.black)
+                                  .font(.system(size: 30))
+                                  .imageScale(.small)
+                                  .opacity(0.6)
+                                  .frame(width: 80, alignment: .center)
+                                   
+                              Text(screen.titulo)
+                                   .font(.caption)
+                                   .foregroundColor(Color.black)
+                                   .multilineTextAlignment(.center)
+                                   .opacity(0.6)
+                         }
+                         
+                     }
+                     .ignoresSafeArea()
+                     
+                     
+                 }
+              }
+              .frame(height: 5)
+              .ignoresSafeArea()
+              .padding(.top, 15.0)
+              .padding(.bottom, 0)
+             .background(Color.white)
          }
-         .frame(height: 15.0)
-         .ignoresSafeArea()
-         .padding([.top, .leading, .trailing], 10.0)
-         .padding(.top, 4.0)
-        .background(Color.white)
+         .padding(.top, 5)
     }
 }
 

@@ -31,10 +31,8 @@ struct MenuView: View {
     
     @State private var selectedDates: Set<DateComponents> = []
     
-    func mostrarDatasSelecionadas(){
-        print(selectedDates)
-    }
-   
+    
+
     var body: some View {
         ZStack {
             NavigationView{
@@ -45,7 +43,9 @@ struct MenuView: View {
                     
                     VStack{
                         MultiDatePicker("Label", selection: $selectedDates)
-                                            .padding()
+                                    .padding()
+                        
+
                     }
                     
                     Divider()
@@ -53,22 +53,25 @@ struct MenuView: View {
                     VStack{
                         ScrollView{
                             ForEach(Sistema.shared.reunioes, id: \.self) { reuniao in
+                                
                                 GroupBox(label:
                                             Text(reuniao.nomeEvento)) {
                                     HStack {
                                         HStack {
                                             Image(systemName: "clock")
                                             Text(extrairHoraDeData(reuniao.dataInicio))
-                                        }
+                                        }.opacity(0.6)
                                         HStack {
                                             Image(systemName: "calendar")
                                             Text(formatDate(reuniao.dataInicio))
-                                        }
+                                        }.opacity(0.6)
                                         
                                         Spacer()
                                         Image(systemName: "chevron.right")
+                                            .foregroundColor(Color("PrimaryColor"))
                                     }.onTapGesture {
                                         acessarReuniao(reuniao: reuniao)
+                                        print(reuniao.dataInicio)
                                     }
                                 }
                                 
