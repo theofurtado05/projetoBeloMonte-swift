@@ -12,9 +12,6 @@
 		B41CA7432AD5BD91005284A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41CA7422AD5BD91005284A4 /* Assets.xcassets */; };
 		B41CA7462AD5BD91005284A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41CA7452AD5BD91005284A4 /* Preview Assets.xcassets */; };
 		B46C74092B0406A000F825EC /* ActiveReuniao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C74082B0406A000F825EC /* ActiveReuniao.swift */; };
-		B46EB0462B1444FA00A24809 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B46EB0452B1444F900A24809 /* WidgetKit.framework */; };
-		B46EB0482B1444FA00A24809 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B46EB0472B1444FA00A24809 /* SwiftUI.framework */; };
-		B46EB0572B1444FC00A24809 /* AlertaNotificacaoExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B46EB0432B1444F900A24809 /* AlertaNotificacaoExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B484AF8A2ADE05FC00AF2D1D /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484AF892ADE05FC00AF2D1D /* RegisterPage.swift */; };
 		B484AF8C2ADE0EB200AF2D1D /* ForgetPasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484AF8B2ADE0EB200AF2D1D /* ForgetPasswordPage.swift */; };
 		B484AF8E2ADE152200AF2D1D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B484AF8D2ADE152200AF2D1D /* MenuView.swift */; };
@@ -32,16 +29,6 @@
 		B4F50EB12B13D53000964A87 /* ActiveDestaque.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F50EB02B13D53000964A87 /* ActiveDestaque.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B46EB0552B1444FC00A24809 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B41CA7332AD5BD8E005284A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B46EB0422B1444F900A24809;
-			remoteInfo = AlertaNotificacaoExtension;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		B46EB0582B1444FC00A24809 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -49,7 +36,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				B46EB0572B1444FC00A24809 /* AlertaNotificacaoExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,7 +49,6 @@
 		B41CA7422AD5BD91005284A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B41CA7452AD5BD91005284A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B46C74082B0406A000F825EC /* ActiveReuniao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveReuniao.swift; sourceTree = "<group>"; };
-		B46EB0432B1444F900A24809 /* AlertaNotificacaoExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AlertaNotificacaoExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B46EB0452B1444F900A24809 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		B46EB0472B1444FA00A24809 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		B484AF892ADE05FC00AF2D1D /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
@@ -91,15 +76,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B46EB0402B1444F900A24809 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B46EB0482B1444FA00A24809 /* SwiftUI.framework in Frameworks */,
-				B46EB0462B1444FA00A24809 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -116,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				B41CA73B2AD5BD8E005284A4 /* ProjetoBeloMonte-Swift.app */,
-				B46EB0432B1444F900A24809 /* AlertaNotificacaoExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,29 +179,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				B46EB0562B1444FC00A24809 /* PBXTargetDependency */,
 			);
 			name = "ProjetoBeloMonte-Swift";
 			productName = "ProjetoBeloMonte-Swift";
 			productReference = B41CA73B2AD5BD8E005284A4 /* ProjetoBeloMonte-Swift.app */;
 			productType = "com.apple.product-type.application";
-		};
-		B46EB0422B1444F900A24809 /* AlertaNotificacaoExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B46EB05B2B1444FC00A24809 /* Build configuration list for PBXNativeTarget "AlertaNotificacaoExtension" */;
-			buildPhases = (
-				B46EB03F2B1444F900A24809 /* Sources */,
-				B46EB0402B1444F900A24809 /* Frameworks */,
-				B46EB0412B1444F900A24809 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AlertaNotificacaoExtension;
-			productName = AlertaNotificacaoExtension;
-			productReference = B46EB0432B1444F900A24809 /* AlertaNotificacaoExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -240,9 +197,6 @@
 				TargetAttributes = {
 					B41CA73A2AD5BD8E005284A4 = {
 						CreatedOnToolsVersion = 14.3.1;
-					};
-					B46EB0422B1444F900A24809 = {
-						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
@@ -260,7 +214,6 @@
 			projectRoot = "";
 			targets = (
 				B41CA73A2AD5BD8E005284A4 /* ProjetoBeloMonte-Swift */,
-				B46EB0422B1444F900A24809 /* AlertaNotificacaoExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -272,13 +225,6 @@
 			files = (
 				B41CA7462AD5BD91005284A4 /* Preview Assets.xcassets in Resources */,
 				B41CA7432AD5BD91005284A4 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B46EB0412B1444F900A24809 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,22 +256,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B46EB03F2B1444F900A24809 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B46EB0562B1444FC00A24809 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B46EB0422B1444F900A24809 /* AlertaNotificacaoExtension */;
-			targetProxy = B46EB0552B1444FC00A24809 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B41CA7472AD5BD91005284A4 /* Debug */ = {
@@ -378,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -432,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -450,6 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ProjetoBeloMonte-Swift/Preview Content\"";
+				DEVELOPMENT_TEAM = 3W8L75VLA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -478,6 +410,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ProjetoBeloMonte-Swift/Preview Content\"";
+				DEVELOPMENT_TEAM = 3W8L75VLA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -492,69 +425,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IBMEC.ProjetoBeloMonte-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		B46EB0592B1444FC00A24809 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AlertaNotificacao/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AlertaNotificacao;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "IBMEC.ProjetoBeloMonte-Swift.AlertaNotificacao";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		B46EB05A2B1444FC00A24809 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AlertaNotificacao/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AlertaNotificacao;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "IBMEC.ProjetoBeloMonte-Swift.AlertaNotificacao";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -578,15 +448,6 @@
 			buildConfigurations = (
 				B41CA74A2AD5BD91005284A4 /* Debug */,
 				B41CA74B2AD5BD91005284A4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B46EB05B2B1444FC00A24809 /* Build configuration list for PBXNativeTarget "AlertaNotificacaoExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B46EB0592B1444FC00A24809 /* Debug */,
-				B46EB05A2B1444FC00A24809 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
