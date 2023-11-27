@@ -17,7 +17,7 @@ class Reuniao: Hashable, Equatable {
     var status: String
     var notificacao: String
     var descricao: String
-    
+    var convidados: [Convidado]
     
     init (nomeEvento: String, participantes: String, dataInicio: Date, dataFinal: Date, localizacao: String, status: String, notificacao: String, descricao: String){
         self.nomeEvento = nomeEvento
@@ -28,6 +28,7 @@ class Reuniao: Hashable, Equatable {
         self.status = status
         self.notificacao = notificacao
         self.descricao = descricao
+        self.convidados = []
     }
     
     init (){
@@ -39,6 +40,7 @@ class Reuniao: Hashable, Equatable {
         self.status = ""
         self.notificacao = ""
         self.descricao = ""
+        self.convidados = []
     }
     
     // Implementação do protocolo Hashable
@@ -57,4 +59,38 @@ class Reuniao: Hashable, Equatable {
 }
 
 
+class ItemReuniao {
+    var icon: String
+    var titulo: String
+    var valor: String
+    
+    init(icon: String, titulo: String, valor: String){
+        self.icon = icon
+        self.titulo = titulo
+        self.valor = valor
+    }
+}
 
+
+class Convidado {
+    var email: String
+    var nome: String
+    
+    init(email: String, nome: String){
+        self.email = email
+        self.nome = nome
+    }
+    
+    // Implementação do protocolo Hashable
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(email)
+        hasher.combine(nome)
+    }
+    
+    // Implementação do protocolo Equatable
+    static func == (lhs: Convidado, rhs: Convidado) -> Bool {
+        return lhs.nome == rhs.nome &&
+               lhs.email == rhs.email
+               
+    }
+}
