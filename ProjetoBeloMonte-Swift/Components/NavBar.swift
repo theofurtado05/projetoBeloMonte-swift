@@ -19,9 +19,9 @@ struct NavBar: View {
         Screen(titulo: "Adicionar", icon: "plus.circle", pageTo: {
             AnyView(AdicionarReuniao())
         }),
-        Screen(titulo: "Ajustes", icon: "gearshape", pageTo: {
-            AnyView(Configuracoes())
-        }),
+//        Screen(titulo: "Ajustes", icon: "gearshape", pageTo: {
+//            AnyView(Configuracoes())
+//        }),
     ]
     
 

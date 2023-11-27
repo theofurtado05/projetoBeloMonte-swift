@@ -9,17 +9,18 @@ import Foundation
 
 class Reuniao: Hashable, Equatable {
     
-    var nomeEvento: String
-    var participantes: String
+    var nomeEvento: String //titulo
+    var participantes: [String]
     var dataInicio: Date
     var dataFinal: Date
     var localizacao: String
-    var status: String
-    var notificacao: String
+    var status: String //exibir como
+    var notificacao: Int
     var descricao: String
-    var convidados: [Convidado]
+    var convidados: [Convidado] //nao to usando
+    var repetir: Bool
     
-    init (nomeEvento: String, participantes: String, dataInicio: Date, dataFinal: Date, localizacao: String, status: String, notificacao: String, descricao: String){
+    init (nomeEvento: String, participantes: [String], dataInicio: Date, dataFinal: Date, localizacao: String, status: String, notificacao: Int, descricao: String, repetir: Bool){
         self.nomeEvento = nomeEvento
         self.participantes = participantes
         self.dataInicio = dataInicio
@@ -29,18 +30,20 @@ class Reuniao: Hashable, Equatable {
         self.notificacao = notificacao
         self.descricao = descricao
         self.convidados = []
+        self.repetir = repetir
     }
     
     init (){
         self.nomeEvento = ""
-        self.participantes = ""
+        self.participantes = []
         self.dataInicio = Date()
         self.dataFinal = Date()
         self.localizacao = ""
         self.status = ""
-        self.notificacao = ""
+        self.notificacao = 5
         self.descricao = ""
         self.convidados = []
+        self.repetir = true
     }
     
     // Implementação do protocolo Hashable
@@ -79,6 +82,11 @@ class Convidado {
     init(email: String, nome: String){
         self.email = email
         self.nome = nome
+    }
+    
+    init(nome: String){
+        self.nome = nome
+        self.email = ""
     }
     
     // Implementação do protocolo Hashable

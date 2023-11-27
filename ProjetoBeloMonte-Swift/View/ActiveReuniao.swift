@@ -8,10 +8,25 @@
 import SwiftUI
 
 struct ActiveReuniao: View {
+    //Sistema.shared.activeReuniao
+    func formatDate(_ date: Date) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            return dateFormatter.string(from: date)
+    }
+    
+    func extrairHoraDeData(_ data: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: data)
+    }
+    
+    @State var repetir: String = Sistema.shared.activeReuniao.repetir ? "Ativo" : "Nunca"
+    
     var body: some View {
         ZStack{
             VStack{
-                HeaderTitleView(header: HeaderTitle(title: "Titulo da Reuniao", goTo: AnyView(MenuView())))
+                HeaderTitleView(header: HeaderTitle(title: Sistema.shared.activeReuniao.nomeEvento, goTo: AnyView(MenuView())))
                 
                 
                 ScrollView{
@@ -28,7 +43,7 @@ struct ActiveReuniao: View {
                                 itemReuniao: ItemReuniao(
                                     icon: "calendar",
                                     titulo: "Data",
-                                    valor: "26/11/2023"
+                                    valor: formatDate(Sistema.shared.activeReuniao.dataInicio)
                                 )
                             )
                             
@@ -36,7 +51,7 @@ struct ActiveReuniao: View {
                                 itemReuniao: ItemReuniao(
                                     icon: "clock",
                                     titulo: "Horario",
-                                    valor: "13:53"
+                                    valor: extrairHoraDeData(Sistema.shared.activeReuniao.dataInicio)
                                 )
                             )
                             
@@ -44,7 +59,7 @@ struct ActiveReuniao: View {
                                 itemReuniao: ItemReuniao(
                                     icon: "arrow.counterclockwise",
                                     titulo: "Repetir",
-                                    valor: "Nunca"
+                                    valor: repetir
                                 )
                             )
                             
@@ -52,7 +67,7 @@ struct ActiveReuniao: View {
                                 itemReuniao: ItemReuniao(
                                     icon: "mappin.circle",
                                     titulo: "Localização",
-                                    valor: "Rio de Janeiro - BR"
+                                    valor: Sistema.shared.activeReuniao.localizacao
                                 )
                             )
                             
@@ -60,7 +75,7 @@ struct ActiveReuniao: View {
                                 itemReuniao: ItemReuniao(
                                     icon: "bell.badge",
                                     titulo: "Notificação",
-                                    valor: "5 minutos antes"
+                                    valor: "\(Sistema.shared.activeReuniao.notificacao) minutos antes"
                                 )
                             )
                         }
@@ -71,9 +86,9 @@ struct ActiveReuniao: View {
                                 .font(.subheadline)
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
-                            TextEditor(text: .constant("Descrição"))
+                            TextEditor(text: .constant(Sistema.shared.activeReuniao.descricao))
                                 .padding(10)
-                                .background(Color.black.opacity(0.2))
+                                .background(Color.black.opacity(0.1))
                                 .cornerRadius(10)
                             
                         }
@@ -84,7 +99,9 @@ struct ActiveReuniao: View {
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
                             VStack(alignment: .leading, spacing: 10){
-                                ConvidadosView()
+                                ForEach(Sistema.shared.activeReuniao.participantes, id: \.self) { participante in
+                                    ConvidadosView(nome: participante)
+                                }
                             }
                             
                         }
@@ -93,16 +110,17 @@ struct ActiveReuniao: View {
                     .padding()
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
+            
     }
 }
 
 struct ConvidadosView: View {
-    
+    var nome: String
     var body: some View {
         HStack{
             Image(systemName: "person.crop.circle")
-            Text("Théo Furtado")
+            Text(nome)
         }
     }
 }
@@ -140,5 +158,5 @@ struct ItemReuniaoView: View {
 
 
 #Preview {
-    ActiveReuniao()
+    MenuView()
 }

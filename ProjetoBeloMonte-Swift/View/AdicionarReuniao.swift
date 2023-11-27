@@ -16,23 +16,41 @@ struct AdicionarReuniao: View {
     @State var dataInicio = Date()
     @State var dataFinal = Date()
     @State var localizacao: String = ""
-    @State var status: String = ""
-    @State var notificacao: String = ""
+    @State var status: Int = 0
+    @State var notificacao: Int = 0
     @State var descricao: String = ""
     @State var reuniaoCriada: Bool = false
     @State var navigateToMenu: Bool = false
+    @State var repetir: Bool = true
     
+    @State private var convidados = ""
+    @State private var listaConvidados: [String] = []
 
     
     func CriarReuniao(){
+        @State var statusAuxiliar: String
+        if(status == 0){
+            statusAuxiliar = "Ocupado"
+        } else {
+            statusAuxiliar = "Disponível"
+        }
         
-        let reuniao: Reuniao = Reuniao(nomeEvento: nomeEvento, participantes: participantes, dataInicio: dataInicio, dataFinal: dataFinal, localizacao: localizacao, status: status, notificacao: notificacao, descricao: descricao)
+        let reuniao: Reuniao = Reuniao(nomeEvento: nomeEvento, participantes: listaConvidados, dataInicio: dataInicio, dataFinal: dataFinal, localizacao: localizacao, status: statusAuxiliar, notificacao: notificacao, descricao: descricao, repetir: repetir)
         
         print(dataInicio)
         
         Sistema.shared.reunioes.append(reuniao)
         reuniaoCriada = true
     }
+    
+    func adicionarConvidados() {
+        let convidado = convidados.trimmingCharacters(in: .whitespacesAndNewlines)
+                if !convidado.isEmpty {
+                    listaConvidados.append(convidado)
+                }
+
+        convidados = ""
+        }
     
     var body: some View {
         NavigationView{
@@ -44,15 +62,34 @@ struct AdicionarReuniao: View {
                     HeaderTitleView(header: header)
                     VStack{
                         Form{
+                            
                             HStack{
                                 Image(systemName: "pencil")
                                 TextField("Nome do evento", text: $nomeEvento)
                             }
                             
-                            HStack{
-                                Image(systemName: "person.crop.circle")
-                                TextField("Adicionar participantes", text: $participantes)
-                            }
+                            VStack(alignment: .leading, spacing: 10) {
+                                HStack {
+                                    Image(systemName: "person.crop.circle")
+                                    TextField("Adicionar participantes", text: $convidados)
+                                    Button("Adicionar") {
+                                        adicionarConvidados()
+                                    }
+                                        
+                                }
+                                
+
+                                List(listaConvidados, id: \.self) { convidado in
+                                    VStack(alignment: .leading, spacing: 10) { // Use um VStack para alinhar à esquerda
+                                            HStack {
+                                                Image(systemName: "person.crop.circle")
+                                                Text(convidado)
+                                        }
+                                    }.padding(.vertical, 1)
+                                    
+                                }
+                                
+                            }.padding(.bottom, 10)
                             
                             HStack{
                                 
@@ -61,13 +98,21 @@ struct AdicionarReuniao: View {
                                         Image(systemName: "clock")
                                         Text("Data")
                                             .multilineTextAlignment(.leading)
-                                    }.frame(width: .infinity)
+                                    }
                                     
                                     DatePicker(selection: $dataInicio, label: { Text("Inicio") })
                                     DatePicker(selection: $dataFinal, label: { Text("Final") })
                                 }
                             }
                             
+                            Toggle(isOn: $repetir) {
+                                HStack{
+                                    Image(systemName: "repeat")
+                                    Text("Repetir")
+                                }
+                                
+                            }
+                        
                             
                             HStack{
                                 Image(systemName: "mappin.circle")
@@ -76,23 +121,25 @@ struct AdicionarReuniao: View {
                             
                             HStack{
                                 Image(systemName: "eye.fill")
-                                Picker(selection: $status, label: Text("Status")) {
-                                    Text("Ocupado").tag(1)
-                                    Text("Disponível").tag(2)
-                                }
+                                Picker(selection: $status, label: Text("Exibir como: ")) {
+                                        Text("Ocupado").tag(1)
+                                        Text("Disponível").tag(2)
+                                    }
+                                            
                             }
                             
                             HStack {
                                 Image(systemName: "bell.badge.fill")
-                                TextField("Adicionar notificação", text: $notificacao)
-                            }
+                                Stepper(value: $notificacao, in: 0...60, step: 1) {
+                                                Text("Notificar \(notificacao) minutos antes")
+                                            }
+                                }
                             
                             HStack{
                                 Image(systemName: "text.alignleft")
                                 TextField("Descrição", text: $descricao)
                             }
-                            
-                            
+
                         }
                         
                         Button(action: {
@@ -118,11 +165,9 @@ struct AdicionarReuniao: View {
                                             }
                                         )
                                     }
-                        
-                        
-                    }
-                    
-                    
+
+                                }
+
                 }
             }
         }.navigationBarBackButtonHidden(true)

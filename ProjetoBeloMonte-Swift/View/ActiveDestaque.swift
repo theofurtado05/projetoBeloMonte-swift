@@ -9,9 +9,6 @@ import SwiftUI
 
 struct ActiveDestaque: View {
     
-    
-    
-    
     var body: some View {
         ZStack{
             VStack{
