@@ -29,6 +29,7 @@ struct MenuView: View {
         print(Sistema.shared.activeReuniao.nomeEvento)
     }
     
+    @State private var selectedDates: Set<DateComponents> = []
    
     var body: some View {
         ZStack {
@@ -39,7 +40,8 @@ struct MenuView: View {
                     }
                     
                     VStack{
-                        MultiDatePicker("Label"/*@END_MENU_TOKEN@*/, selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Binding<Set<DateComponents>>@*/.constant([])).padding()
+                        MultiDatePicker("Label", selection: $selectedDates)
+                                            .padding()
                     }
                     
                     Divider()
