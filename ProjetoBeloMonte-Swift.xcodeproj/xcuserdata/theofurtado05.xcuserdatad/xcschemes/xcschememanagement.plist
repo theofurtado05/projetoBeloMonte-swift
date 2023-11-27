@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AlertaNotificacaoExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>ProjetoBeloMonte-Swift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>

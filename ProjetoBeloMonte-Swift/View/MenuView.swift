@@ -30,6 +30,10 @@ struct MenuView: View {
     }
     
     @State private var selectedDates: Set<DateComponents> = []
+    
+    func mostrarDatasSelecionadas(){
+        print(selectedDates)
+    }
    
     var body: some View {
         ZStack {

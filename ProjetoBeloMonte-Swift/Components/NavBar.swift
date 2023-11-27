@@ -13,12 +13,13 @@ struct NavBar: View {
         Screen(titulo: "Hoje", icon: "calendar", pageTo: {
             AnyView(Hoje())
         }),
-        Screen(titulo: "Visualizar", icon: "calendar.circle", pageTo: {
-            AnyView(MenuView())
-        }),
         Screen(titulo: "Adicionar", icon: "plus.circle", pageTo: {
             AnyView(AdicionarReuniao())
         }),
+        Screen(titulo: "Visualizar", icon: "calendar.circle", pageTo: {
+            AnyView(MenuView())
+        }),
+        
 //        Screen(titulo: "Ajustes", icon: "gearshape", pageTo: {
 //            AnyView(Configuracoes())
 //        }),

@@ -14,7 +14,7 @@ class Sistema {
 
         
     var reunioes: [Reuniao] = [
-        Reuniao(nomeEvento: "Reuniao - 1", participantes: ["theofurtado05@gmail.com"], dataInicio: Date(), dataFinal: Date(), localizacao: "Rio de Janeiro", status: "Ocupado", notificacao: 5, descricao: "Reuniao da ap2", repetir: false)
+        Reuniao(nomeEvento: "Apresentação App", participantes: ["Théo Furtado", "Thiago Souza",  "Victor Machado"], dataInicio: Date(), dataFinal: Date(), localizacao: "Rio de Janeiro", status: "Ocupado", notificacao: 5, descricao: "Reunião de apresentação do APP para a Norte Energia", repetir: false)
     ]
     
     var destaques: [Destaque] = [
